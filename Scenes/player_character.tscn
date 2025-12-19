@@ -137,12 +137,13 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_he2x2"]
 
 [node name="PlayerCharacter" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_qcwfp")
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_he2x2")
 animation = &"move_down"
-frame_progress = 0.81991446
+frame_progress = 0.53940654
 
 [node name="PlayerHitbox" type="CollisionShape2D" parent="."]
 scale = Vector2(1.75, 1.75)
