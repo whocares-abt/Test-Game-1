@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnqkf8kg38dhk"]
+
+[ext_resource type="PackedScene" uid="uid://cywgglbfwnn15" path="res://Scenes/interactable.tscn" id="1_acqhf"]
+[ext_resource type="Texture2D" uid="uid://c7pqpnhaoqaa8" path="res://Assets/Art/Spritesheets/placeholder_down.png" id="1_xxsvc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_acqhf"]
+radius = 15.0
+
+[node name="NPC" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xxsvc")
+offset = Vector2(0, -1)
+
+[node name="Interactable" parent="." instance=ExtResource("1_acqhf")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+shape = SubResource("CircleShape2D_acqhf")

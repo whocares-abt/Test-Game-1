@@ -3,10 +3,6 @@
 [ext_resource type="Script" uid="uid://24jagfva86lx" path="res://Scripts/player_character.gd" id="1_qcwfp"]
 [ext_resource type="Texture2D" uid="uid://c27iufbtwdc2o" path="res://Assets/Art/Spritesheets/placeholder_sprite.png" id="2_cmdk4"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cmdk4"]
-atlas = ExtResource("2_cmdk4")
-region = Rect2(32, 0, 32, 34)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_o0f8b"]
 atlas = ExtResource("2_cmdk4")
 region = Rect2(0, 0, 32, 34)
@@ -55,16 +51,12 @@ region = Rect2(32, 102, 32, 34)
 atlas = ExtResource("2_cmdk4")
 region = Rect2(64, 102, 32, 34)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmdk4"]
+atlas = ExtResource("2_cmdk4")
+region = Rect2(32, 0, 32, 34)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_he2x2"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cmdk4")
-}],
-"loop": false,
-"name": &"idle",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_o0f8b")
@@ -132,6 +124,14 @@ animations = [{
 "loop": true,
 "name": &"move_up",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmdk4")
+}],
+"loop": false,
+"name": &"startup",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_he2x2"]
@@ -142,8 +142,7 @@ script = ExtResource("1_qcwfp")
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_he2x2")
-animation = &"move_down"
-frame_progress = 0.53940654
+animation = &"startup"
 
 [node name="PlayerHitbox" type="CollisionShape2D" parent="."]
 scale = Vector2(1.75, 1.75)
