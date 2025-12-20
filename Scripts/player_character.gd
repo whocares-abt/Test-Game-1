@@ -1,8 +1,13 @@
 extends CharacterBody2D
 
 @onready var sprite = $PlayerSprite
+@onready var interacting_component = $InteractingComponent
 
 @export var SPEED = 300
+
+func _input(event: InputEvent) -> void:
+	if (Input.is_action_just_pressed("interact")):
+		interacting_component.interact_with_object()
 
 func _physics_process(delta: float) -> void:
 

@@ -1,18 +1,52 @@
-[gd_scene load_steps=4 format=3 uid="uid://bnqkf8kg38dhk"]
+[gd_scene load_steps=9 format=3 uid="uid://bnqkf8kg38dhk"]
 
 [ext_resource type="PackedScene" uid="uid://cywgglbfwnn15" path="res://Scenes/interactable.tscn" id="1_acqhf"]
-[ext_resource type="Texture2D" uid="uid://c7pqpnhaoqaa8" path="res://Assets/Art/Spritesheets/placeholder_down.png" id="1_xxsvc"]
+[ext_resource type="Script" uid="uid://ci5xjhx38od73" path="res://Scripts/npc.gd" id="1_g6unj"]
+[ext_resource type="Texture2D" uid="uid://c27iufbtwdc2o" path="res://Assets/Art/Spritesheets/placeholder_sprite.png" id="2_h1ryf"]
+[ext_resource type="FontFile" uid="uid://82maald4tflp" path="res://Assets/Font/BoldPixels.ttf" id="4_h1ryf"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_acqhf"]
-radius = 15.0
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ig1v"]
+atlas = ExtResource("2_h1ryf")
+region = Rect2(32, 0, 32, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6atyd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ig1v")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h1ryf"]
+radius = 18.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g6unj"]
+size = Vector2(30, 30)
 
 [node name="NPC" type="Node2D"]
+script = ExtResource("1_g6unj")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_xxsvc")
-offset = Vector2(0, -1)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6atyd")
 
 [node name="Interactable" parent="." instance=ExtResource("1_acqhf")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
-shape = SubResource("CircleShape2D_acqhf")
+shape = SubResource("CircleShape2D_h1ryf")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_g6unj")
+
+[node name="Dialogue" type="Label" parent="."]
+visible = false
+offset_left = -19.0
+offset_top = -32.0
+offset_right = 21.0
+offset_bottom = -9.0
+theme_override_fonts/font = ExtResource("4_h1ryf")
+text = "Hello"
