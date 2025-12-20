@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bnqkf8kg38dhk"]
+[gd_scene load_steps=7 format=3 uid="uid://bnqkf8kg38dhk"]
 
-[ext_resource type="PackedScene" uid="uid://cywgglbfwnn15" path="res://Scenes/Interactions/interactable.tscn" id="1_acqhf"]
 [ext_resource type="Script" uid="uid://ci5xjhx38od73" path="res://Scripts/Characters/npc.gd" id="1_g6unj"]
 [ext_resource type="Texture2D" uid="uid://c27iufbtwdc2o" path="res://Assets/Art/Spritesheets/placeholder_sprite.png" id="2_h1ryf"]
+[ext_resource type="PackedScene" uid="uid://dp7kob3uumscd" path="res://Scenes/Interactions/dialogue_interactable.tscn" id="3_e62nw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1ig1v"]
 atlas = ExtResource("2_h1ryf")
@@ -19,23 +19,16 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_h1ryf"]
-radius = 20.0
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g6unj"]
 size = Vector2(30, 30)
 
 [node name="NPC" type="Node2D"]
 script = ExtResource("1_g6unj")
-npc_name = "Alice"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6atyd")
 
-[node name="Interactable" parent="." instance=ExtResource("1_acqhf")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
-shape = SubResource("CircleShape2D_h1ryf")
+[node name="DialogueInteractable" parent="." instance=ExtResource("3_e62nw")]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
