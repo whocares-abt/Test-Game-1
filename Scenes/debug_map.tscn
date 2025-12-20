@@ -16,6 +16,13 @@ position = Vector2(100, 0)
 [node name="NPC2" parent="." instance=ExtResource("2_jcsea")]
 position = Vector2(99, -242)
 npc_name = "Bob"
+dialogue = [{
+"dialogue": "You must have met my sister",
+"speaker": "Bob"
+}, {
+"dialogue": "I am Bob",
+"speaker": "Bob"
+}]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

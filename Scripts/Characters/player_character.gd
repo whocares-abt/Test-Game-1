@@ -5,11 +5,22 @@ extends CharacterBody2D
 
 @export var SPEED = 300
 
+var input_enabled = true
+var input_disabled_by = ""
+
+func _ready():
+	SignalBus.connect("dialogue_started", disable_input_for_dialogue)
+	SignalBus.connect("dialogue_finished", enable_input_after_dialogue)
+
 func _input(event: InputEvent) -> void:
+	if (not input_enabled):
+		return
 	if (event.is_action_pressed("interact")):
 		interacting_component.interact_with_object() 
 
 func _physics_process(delta: float) -> void:
+	if (not input_enabled):
+		return
 
 	var direction_x = Input.get_axis("move_left", "move_right")
 	var direction_y = Input.get_axis("move_up", "move_down")
@@ -44,3 +55,13 @@ func play_animation(direction_x, direction_y):
 
 	else:
 		sprite.pause()
+
+func disable_input_for_dialogue(speaker_id, dialogue):
+	input_enabled = false
+	input_disabled_by = "dialogue"
+	play_animation(0, 0) # pause animation
+
+func enable_input_after_dialogue(speaker_id):
+	await get_tree().create_timer(0.1).timeout # Wait before reenabling
+	input_enabled = true
+	input_disabled_by = ""
