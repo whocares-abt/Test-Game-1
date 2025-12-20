@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://dp7kob3uumscd"]
+
+[ext_resource type="Script" uid="uid://bnsdvm2f34gxj" path="res://Scripts/Interactions/dialogue_interactable.gd" id="1_55jie"]
+[ext_resource type="PackedScene" uid="uid://cywgglbfwnn15" path="res://Scenes/Interactions/interactable.tscn" id="1_x1ngi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_55jie"]
+radius = 20.0
+
+[node name="DialogueInteractable" type="Node2D"]
+script = ExtResource("1_55jie")
+
+[node name="Interactable" parent="." instance=ExtResource("1_x1ngi")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+shape = SubResource("CircleShape2D_55jie")

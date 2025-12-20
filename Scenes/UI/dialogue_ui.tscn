@@ -35,7 +35,7 @@ text = "BRUH"
 
 [node name="ResponseMenu" parent="." instance=ExtResource("3_o8jt6")]
 layout_mode = 0
-offset_left = 715.0
-offset_top = 255.0
+offset_left = 772.0
+offset_top = 3.0
 offset_right = 1150.0
 offset_bottom = 502.0
