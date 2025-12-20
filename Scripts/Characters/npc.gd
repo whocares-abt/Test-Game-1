@@ -1,22 +1,34 @@
 extends Node2D
 
 @onready var interactable = $Interactable
-@onready var dialogue_label = $Dialogue
 
-@export var npc_name = ""
-@export var dialogue = "Hello"
+@export var npc_name = "Alice01"
+@export var dialogue = [
+	{
+		"speaker": "Alice01",
+		"dialogue": "How are you?",
+	},
+	{
+		"speaker": "Alice01",
+		"dialogue": "You must be exhausted",
+	},
+	{
+		"speaker": "",
+		"dialogue": "This is how it looks without a speaker",
+	},
+]
 
+@export var id = 01
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	interactable.interact = _on_interact
-	dialogue_label.text = dialogue
+	SignalBus.connect("dialogue_finished", _on_dialogue_end)
 
 func _on_interact():
-	dialogue_label.visible = true
 	interactable.is_interactable = false
-	
-	#await get_tree().create_timer(1).timeout
-	#
-	#dialogue_label.visible = false
-	#interactable.is_interactable = true
+	SignalBus.emit_signal("dialogue_started", id, dialogue)
+
+func _on_dialogue_end(speaker_id):
+	if (speaker_id == id):
+		interactable.is_interactable = true

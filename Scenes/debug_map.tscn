@@ -1,26 +1,22 @@
 [gd_scene load_steps=4 format=3 uid="uid://beci4n4pls0xu"]
 
 [ext_resource type="PackedScene" uid="uid://r0mmctm22hgq" path="res://Scenes/Characters/player_character.tscn" id="1_ngmhs"]
+[ext_resource type="PackedScene" uid="uid://n8vs7pdve71x" path="res://Scenes/UI/exploration_ui.tscn" id="1_o67dp"]
 [ext_resource type="PackedScene" uid="uid://bnqkf8kg38dhk" path="res://Scenes/Characters/npc.tscn" id="2_jcsea"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_jcsea"]
-distance = -2.0
 
 [node name="DebugMap" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="PlayerCharacter" parent="." instance=ExtResource("1_ngmhs")]
 
-[node name="WorldBoundary" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundary"]
-position = Vector2(1, 23)
-shape = SubResource("WorldBoundaryShape2D_jcsea")
+[node name="Camera2D" type="Camera2D" parent="PlayerCharacter"]
 
 [node name="NPC" parent="." instance=ExtResource("2_jcsea")]
 position = Vector2(100, 0)
 
 [node name="NPC2" parent="." instance=ExtResource("2_jcsea")]
-position = Vector2(99, -31)
+position = Vector2(99, -242)
 npc_name = "Bob"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ExplorationUI" parent="CanvasLayer" instance=ExtResource("1_o67dp")]

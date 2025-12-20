@@ -15,6 +15,10 @@ run/main_scene="uid://beci4n4pls0xu"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SignalBus="*res://Scenes/Autoloads/signal_bus.tscn"
+
 [input]
 
 move_up={
