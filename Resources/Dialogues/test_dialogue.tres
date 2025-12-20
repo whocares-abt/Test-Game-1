@@ -27,7 +27,9 @@ script = ExtResource("1_7s3l3")
 speaker = "Alice01"
 speakerid = 1
 line = "Anyways, how are you feeling?"
-responses = Array[String](["Pretty good", "Been better", "Terrible"])
+responses = {
+1: "Chill"
+}
 metadata/_custom_type_script = "uid://b4uubw3c6h8sk"
 
 [resource]

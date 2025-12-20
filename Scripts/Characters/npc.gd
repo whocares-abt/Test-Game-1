@@ -5,7 +5,7 @@ extends Node2D
 @export var npc_name = "Alice01"
 @export var dialogue_scene = load("res://Resources/Dialogues/test_dialogue.tres")
 
-@export var id = 01
+@export var scene_id = 01
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,8 +14,8 @@ func _ready() -> void:
 
 func _on_interact():
 	interactable.is_interactable = false
-	SignalBus.emit_signal("dialogue_started", id, dialogue_scene)
+	SignalBus.emit_signal("dialogue_started", dialogue_scene)
 
-func _on_dialogue_end(speaker_id):
-	if (speaker_id == id):
+func _on_dialogue_end(scene : DialogueScene):
+	if (scene.scene_id == scene_id):
 		interactable.is_interactable = true

@@ -1,6 +1,6 @@
 extends Node
 
-signal dialogue_started(speaker_id, dialogue_scene)
-signal dialogue_finished(speaker_id)
+signal dialogue_started(dialogue_scene)
+signal dialogue_finished(dialogue_scene)
 
-signal player_chose_response(speaker_id, response)
+signal player_chose_response(response_id, response_text)
