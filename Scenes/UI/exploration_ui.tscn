@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://n8vs7pdve71x"]
+
+[ext_resource type="PackedScene" uid="uid://b5mkdtdsuohhv" path="res://Scenes/UI/dialogue_ui.tscn" id="1_gs0yk"]
+
+[node name="ExplorationUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DialogueUI" parent="." instance=ExtResource("1_gs0yk")]
+layout_mode = 1
+offset_right = 0.00012207031

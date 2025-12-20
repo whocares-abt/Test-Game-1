@@ -28,6 +28,7 @@ size = Vector2(30, 30)
 
 [node name="NPC" type="Node2D"]
 script = ExtResource("1_g6unj")
+npc_name = "Alice"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6atyd")
@@ -49,4 +50,3 @@ offset_top = -32.0
 offset_right = 21.0
 offset_bottom = -9.0
 theme_override_fonts/font = ExtResource("4_h1ryf")
-text = "Hello"

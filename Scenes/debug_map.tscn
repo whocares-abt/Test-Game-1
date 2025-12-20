@@ -12,14 +12,15 @@ distance = -2.0
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("1_ngmhs")]
 
-[node name="NPC" parent="." instance=ExtResource("2_jcsea")]
-position = Vector2(100, 0)
-
 [node name="WorldBoundary" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundary"]
 position = Vector2(1, 23)
 shape = SubResource("WorldBoundaryShape2D_jcsea")
 
+[node name="NPC" parent="." instance=ExtResource("2_jcsea")]
+position = Vector2(100, 0)
+
 [node name="NPC2" parent="." instance=ExtResource("2_jcsea")]
 position = Vector2(99, -31)
+npc_name = "Bob"

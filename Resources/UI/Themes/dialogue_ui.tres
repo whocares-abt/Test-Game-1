@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bwjriaa117mvt"]
+
+[ext_resource type="StyleBox" uid="uid://ca46p8m8mbr2" path="res://Resources/UI/Styleboxes/basic_outline.tres" id="1_dpiir"]
+[ext_resource type="FontFile" uid="uid://82maald4tflp" path="res://Assets/Font/BoldPixels.ttf" id="2_ubgql"]
+
+[resource]
+default_font = ExtResource("2_ubgql")
+default_font_size = 40
+RichTextLabel/styles/normal = ExtResource("1_dpiir")
