@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://beci4n4pls0xu"]
 
-[ext_resource type="PackedScene" uid="uid://r0mmctm22hgq" path="res://Scenes/player_character.tscn" id="1_ngmhs"]
-[ext_resource type="PackedScene" uid="uid://bnqkf8kg38dhk" path="res://Scenes/npc.tscn" id="2_jcsea"]
+[ext_resource type="PackedScene" uid="uid://r0mmctm22hgq" path="res://Scenes/Characters/player_character.tscn" id="1_ngmhs"]
+[ext_resource type="PackedScene" uid="uid://bnqkf8kg38dhk" path="res://Scenes/Characters/npc.tscn" id="2_jcsea"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_jcsea"]
 distance = -2.0
