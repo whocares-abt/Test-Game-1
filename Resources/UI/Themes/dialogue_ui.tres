@@ -6,4 +6,5 @@
 [resource]
 default_font = ExtResource("2_ubgql")
 default_font_size = 40
+Button/styles/normal = ExtResource("1_dpiir")
 RichTextLabel/styles/normal = ExtResource("1_dpiir")

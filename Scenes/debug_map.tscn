@@ -12,6 +12,20 @@
 
 [node name="NPC" parent="." instance=ExtResource("2_jcsea")]
 position = Vector2(100, 0)
+dialogue = [{
+"dialogue": "How are you?",
+"speaker": "Alice01"
+}, {
+"dialogue": "You must be exhausted",
+"speaker": "Alice01"
+}, {
+"dialogue": "This is how it looks without a speaker",
+"speaker": ""
+}, {
+"dialogue": "So, how are you doing?",
+"responses": PackedStringArray("Pretty Well", "Terrible"),
+"speaker": "Alice01"
+}]
 
 [node name="NPC2" parent="." instance=ExtResource("2_jcsea")]
 position = Vector2(99, -242)

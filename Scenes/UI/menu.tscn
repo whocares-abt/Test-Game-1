@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://rgaks472675q"]
+
+[ext_resource type="PackedScene" uid="uid://cegtxic67ew3n" path="res://Scenes/UI/menu_item.tscn" id="1_nhmg3"]
+[ext_resource type="Script" uid="uid://bl3658mg0dfjq" path="res://Scripts/UI/menu.gd" id="1_uk6bn"]
+
+[node name="Menu" type="VBoxContainer"]
+offset_right = 346.0
+offset_bottom = 121.0
+script = ExtResource("1_uk6bn")
+
+[node name="MenuItem" parent="." instance=ExtResource("1_nhmg3")]
+layout_mode = 2
+text = "asdsdfasdf"
+
+[node name="MenuItem2" parent="." instance=ExtResource("1_nhmg3")]
+layout_mode = 2
+text = "asdsdfasdf"

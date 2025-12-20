@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5mkdtdsuohhv"]
+[gd_scene load_steps=4 format=3 uid="uid://b5mkdtdsuohhv"]
 
 [ext_resource type="Script" uid="uid://dri1pplupmcnp" path="res://Scripts/UI/dialogue_ui.gd" id="1_ld8ig"]
 [ext_resource type="Theme" uid="uid://bwjriaa117mvt" path="res://Resources/UI/Themes/dialogue_ui.tres" id="2_2dvv4"]
+[ext_resource type="PackedScene" uid="uid://rgaks472675q" path="res://Scenes/UI/menu.tscn" id="3_o8jt6"]
 
 [node name="DialogueUI" type="Control"]
 layout_mode = 3
@@ -14,7 +15,6 @@ theme = ExtResource("2_2dvv4")
 script = ExtResource("1_ld8ig")
 
 [node name="DialogueText" type="RichTextLabel" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -25,9 +25,15 @@ grow_vertical = 0
 text = "Hello, buddy"
 
 [node name="SpeakerText" type="RichTextLabel" parent="."]
-visible = false
 layout_mode = 0
 offset_top = 459.0
 offset_right = 208.0
 offset_bottom = 500.0
 text = "BRUH"
+
+[node name="ResponseMenu" parent="." instance=ExtResource("3_o8jt6")]
+layout_mode = 0
+offset_left = 715.0
+offset_top = 255.0
+offset_right = 1150.0
+offset_bottom = 502.0

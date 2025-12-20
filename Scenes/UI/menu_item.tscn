@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cegtxic67ew3n"]
+
+[ext_resource type="Script" uid="uid://yej8xlgspi34" path="res://Scripts/UI/menu_item.gd" id="1_yx2l2"]
+
+[node name="MenuItem" type="Button"]
+offset_right = 163.0
+offset_bottom = 26.0
+script = ExtResource("1_yx2l2")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
