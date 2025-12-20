@@ -32,7 +32,8 @@ func create_menu(items : Variant, should_grab_focus : bool) -> void:
 			printerr("No signal to notify menu item picked")
 
 	if (should_grab_focus):
-		self.grab_focus()
+		await get_tree().create_timer(0.1).timeout 
+		self.get_child(0).grab_focus()
 
 func remove_menu():
 	delete_all_children()

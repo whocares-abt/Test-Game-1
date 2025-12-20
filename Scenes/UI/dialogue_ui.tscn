@@ -25,7 +25,7 @@ offset_right = 1152.0
 grow_vertical = 0
 text = "Hello, buddy"
 
-[node name="SpeakerText" type="RichTextLabel" parent="."]
+[node name="SpeakerName" type="RichTextLabel" parent="."]
 visible = false
 layout_mode = 0
 offset_top = 459.0

@@ -18,7 +18,7 @@ func _input(event: InputEvent) -> void:
 	if (event.is_action_pressed("interact")):
 		interacting_component.interact_with_object() 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if (not input_enabled):
 		return
 
@@ -56,12 +56,12 @@ func play_animation(direction_x, direction_y):
 	else:
 		sprite.pause()
 
-func disable_input_for_dialogue(speaker_id, dialogue):
+func disable_input_for_dialogue(_scene):
 	input_enabled = false
 	input_disabled_by = "dialogue"
 	play_animation(0, 0) # pause animation
 
-func enable_input_after_dialogue(speaker_id):
+func enable_input_after_dialogue(_scene):
 	await get_tree().create_timer(0.1).timeout # Wait before reenabling
 	input_enabled = true
 	input_disabled_by = ""

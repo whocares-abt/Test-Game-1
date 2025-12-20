@@ -6,14 +6,12 @@
 [sub_resource type="Resource" id="Resource_7s3l3"]
 script = ExtResource("1_7s3l3")
 speaker = "Alice01"
-speakerid = 1
 line = "How are you?"
 metadata/_custom_type_script = "uid://b4uubw3c6h8sk"
 
 [sub_resource type="Resource" id="Resource_ry4wo"]
 script = ExtResource("1_7s3l3")
 speaker = "Alice01"
-speakerid = 1
 line = "You must be exhausted"
 metadata/_custom_type_script = "uid://b4uubw3c6h8sk"
 
@@ -25,7 +23,6 @@ metadata/_custom_type_script = "uid://b4uubw3c6h8sk"
 [sub_resource type="Resource" id="Resource_ukexu"]
 script = ExtResource("1_7s3l3")
 speaker = "Alice01"
-speakerid = 1
 line = "Anyways, how are you feeling?"
 responses = {
 1: "Chill"
@@ -34,5 +31,6 @@ metadata/_custom_type_script = "uid://b4uubw3c6h8sk"
 
 [resource]
 script = ExtResource("1_ooevd")
+scene_id = 1
 scene = Array[ExtResource("1_7s3l3")]([SubResource("Resource_7s3l3"), SubResource("Resource_ry4wo"), SubResource("Resource_ue3qj"), SubResource("Resource_ukexu")])
 metadata/_custom_type_script = "uid://c2l2kulmk5886"

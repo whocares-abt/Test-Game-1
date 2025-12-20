@@ -1,7 +1,7 @@
 extends Control
 
 @onready var dialogue_text_box = $DialogueText
-@onready var speaker_text_box = $SpeakerText
+@onready var speaker_text_box = $SpeakerName
 @onready var response_menu = $ResponseMenu
 
 var curr_speaker_id = 0
@@ -12,9 +12,10 @@ signal continue_dialogue
 
 func _ready() -> void:
 	SignalBus.connect("dialogue_started", display_dialogue_scene)
-	
+
 	response_menu.change_alignment(BoxContainer.ALIGNMENT_END)
 	response_menu.connect("menu_item_chosen", _on_player_response)
+
 	response_menu.remove_menu()
 
 func _input(event: InputEvent) -> void:
@@ -33,8 +34,8 @@ func display_dialogue_scene(dialogue_scene : DialogueScene):
 		dialogue_text_box.text = dialogue.line
 
 		if dialogue.responses:
-			display_responses(dialogue.responses)
 			curr_responses = dialogue.responses
+			display_responses()
 			await SignalBus.player_chose_response
 		else:
 			await continue_dialogue
@@ -44,8 +45,8 @@ func display_dialogue_scene(dialogue_scene : DialogueScene):
 
 	SignalBus.emit_signal("dialogue_finished", curr_dialogue_scene)
 
-func display_responses(responses : Dictionary):
-	response_menu.create_menu(responses.values(), true)
+func display_responses():
+	response_menu.create_menu(curr_responses.values(), true)
 
 func _on_player_response(player_response):
 	response_menu.remove_menu()
@@ -55,5 +56,5 @@ func _on_player_response(player_response):
 		if (curr_responses[id] == player_response):
 			response_id = id
 			break
-	
+
 	SignalBus.emit_signal("player_chose_response", response_id, player_response)
